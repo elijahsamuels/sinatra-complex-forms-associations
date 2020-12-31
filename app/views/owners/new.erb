@@ -7,11 +7,18 @@
 
   <input type="text" name="owner[name]">
 
+    <%# a form that dynamically generates checkboxes for each of the existing pets %>
   <h3>Existing Pets</h3>
   <% @pets.each do |pet| %>
     <input type="checkbox" name="owner[pet_ids][]" id="<%= pet.id %>" value="<%= pet.id %>"><%= pet.name %><br>
   <% end %>
   <br>
 
-  <input type="submit" value="Create Owner">
+    <%# a field to that form in which a user can fill out the name for a brand new pet. %>
+  <h3>New Pet</h3>
+  <label>Pet Name: </label>
+  <p><input type="text" name="pet[name]" id="pet_name"></p>
+
+
+  <p><input type="submit" value="Create Owner"></p>
 </form>
